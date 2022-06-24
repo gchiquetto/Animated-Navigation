@@ -30,25 +30,41 @@ html {
 .nav {
   display: flex;
   align-items: center;
-  gap: 1.5rem;
   position: absolute;
   background-color: #F9F2ED;
   z-index: 2;
   width: 45%;
+  height: 8rem;
   padding: 1.5rem 2rem;
-  border-radius: 3px; }
+  border-radius: 3px;
+  transition: all 1s;
+  overflow: hidden; }
+  .nav__item {
+    list-style: none;
+    display: inline-block; }
+    .nav__item:not(:last-child) {
+      margin-right: 1rem; }
   .nav__link, .nav__link:link, .nav__link:visited {
     text-decoration: none;
     font-size: 1.6rem;
     color: #343a40;
     letter-spacing: 1px; }
+  .nav__link--hidden {
+    position: absolute;
+    display: block;
+    top: 40%; }
+  .nav--hidden {
+    width: 5%;
+    height: 6rem;
+    padding: 0; }
 
 .btn {
   margin-left: auto;
   border: none;
   height: 3rem;
   cursor: pointer;
-  background-color: transparent; }
+  background-color: transparent;
+  transition: all .4s; }
   .btn-icon {
     position: relative;
     top: .8rem;
@@ -63,6 +79,14 @@ html {
       left: 0;
       height: 1.5px; }
     .btn-icon::before {
-      top: -.9rem; }
+      top: -.9rem;
+      height: 2px; }
     .btn-icon::after {
       top: .9rem; }
+  .btn--hidden {
+    margin: 0 auto; }
+
+.hidden {
+  display: none;
+  position: absolute;
+  left: 0; }

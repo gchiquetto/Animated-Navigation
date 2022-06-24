@@ -25,6 +25,7 @@ html{
     position: relative;
     justify-content: center;
     height: 100vh;
+    
 
     &__top{
         height: 50%;
@@ -42,13 +43,26 @@ html{
 .nav{
     display: flex;
     align-items: center;
-    gap:1.5rem;
     position: absolute;
     background-color: $color-light-2;
     z-index: 2;
     width: 45%;
+    height: 8rem;
     padding: 1.5rem 2rem;
     border-radius: 3px;
+    transition: all 1s;
+    overflow: hidden;
+
+    &__item{
+        list-style: none;
+        display: inline-block;
+      
+
+        &:not(:last-child){
+            margin-right: 1rem;
+        }
+
+    }
 
     &__link{
         &,
@@ -59,15 +73,29 @@ html{
             color: $color-dark-1;
             letter-spacing: 1px;
         }
+
+        &--hidden{
+            position: absolute;
+            display: block;
+            top:40%;
+        }
+    }
+
+    &--hidden{
+        width: 5%;
+        height: 6rem;
+        padding: 0;
+
     }
 }
 
 .btn{
-    margin-left: auto;
+    margin-left:auto;
     border: none;
     height: 3rem;
     cursor: pointer;
     background-color: transparent;
+    transition: all .4s;
 
     &-icon{
         position: relative;
@@ -76,8 +104,7 @@ html{
 
         &,
         &::before,
-        &::after{
-            
+        &::after{ 
             width: 3rem;
             background-color: $color-dark-1;
             display: inline-block;
@@ -93,6 +120,7 @@ html{
 
         &::before{
             top:-.9rem;
+            height: 2px;
         }
 
         &::after{
@@ -100,5 +128,16 @@ html{
         }
     }
 
+    &--hidden{
+        margin: 0 auto;
+    }
+}
+
+
+.hidden{
+    display: none;
+    //width: 0;
+    position: absolute;
+    left:0;
     
 }
