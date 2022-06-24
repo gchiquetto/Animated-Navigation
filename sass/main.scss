@@ -1,0 +1,104 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&display=swap');
+$color-green-1:#9DD6DF;
+$color-light-1: #F7E2D6;
+$color-light-2: #F9F2ED;
+$color-dark-1: #343a40;
+
+*,
+*::before,
+*::after{
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+    font-family: 'Roboto', sans-serif;
+}
+
+html{
+    font-size: 62.5%;
+    box-sizing: border-box;
+}
+
+.main{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    justify-content: center;
+    height: 100vh;
+
+    &__top{
+        height: 50%;
+        width: 100%;
+        background-color: $color-light-1;
+    }
+
+    &__bottom{
+        height: 50%;
+        width: 100%;
+        background-color: $color-green-1;
+    }
+}
+
+.nav{
+    display: flex;
+    align-items: center;
+    gap:1.5rem;
+    position: absolute;
+    background-color: $color-light-2;
+    z-index: 2;
+    width: 45%;
+    padding: 1.5rem 2rem;
+    border-radius: 3px;
+
+    &__link{
+        &,
+        &:link,
+        &:visited{
+            text-decoration: none;
+            font-size: 1.6rem;
+            color: $color-dark-1;
+            letter-spacing: 1px;
+        }
+    }
+}
+
+.btn{
+    margin-left: auto;
+    border: none;
+    height: 3rem;
+    cursor: pointer;
+    background-color: transparent;
+
+    &-icon{
+        position: relative;
+        top:.8rem;
+        height: 2px;
+
+        &,
+        &::before,
+        &::after{
+            
+            width: 3rem;
+            background-color: $color-dark-1;
+            display: inline-block;
+        }
+
+        &::before,
+        &::after{
+            content: '';
+            position: absolute;
+            left:0;
+            height: 1.5px;
+        }
+
+        &::before{
+            top:-.9rem;
+        }
+
+        &::after{
+            top:.9rem;
+        }
+    }
+
+    
+}

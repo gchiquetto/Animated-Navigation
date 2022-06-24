@@ -1,0 +1,68 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&display=swap");
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+  font-family: 'Roboto', sans-serif; }
+
+html {
+  font-size: 62.5%;
+  box-sizing: border-box; }
+
+.main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  justify-content: center;
+  height: 100vh; }
+  .main__top {
+    height: 50%;
+    width: 100%;
+    background-color: #F7E2D6; }
+  .main__bottom {
+    height: 50%;
+    width: 100%;
+    background-color: #9DD6DF; }
+
+.nav {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  position: absolute;
+  background-color: #F9F2ED;
+  z-index: 2;
+  width: 45%;
+  padding: 1.5rem 2rem;
+  border-radius: 3px; }
+  .nav__link, .nav__link:link, .nav__link:visited {
+    text-decoration: none;
+    font-size: 1.6rem;
+    color: #343a40;
+    letter-spacing: 1px; }
+
+.btn {
+  margin-left: auto;
+  border: none;
+  height: 3rem;
+  cursor: pointer;
+  background-color: transparent; }
+  .btn-icon {
+    position: relative;
+    top: .8rem;
+    height: 2px; }
+    .btn-icon, .btn-icon::before, .btn-icon::after {
+      width: 3rem;
+      background-color: #343a40;
+      display: inline-block; }
+    .btn-icon::before, .btn-icon::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      height: 1.5px; }
+    .btn-icon::before {
+      top: -.9rem; }
+    .btn-icon::after {
+      top: .9rem; }
