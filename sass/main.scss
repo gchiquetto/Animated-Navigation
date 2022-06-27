@@ -43,101 +43,76 @@ html{
 .nav{
     display: flex;
     align-items: center;
+    justify-content: space-around;
     position: absolute;
-    background-color: $color-light-2;
-    z-index: 2;
-    width: 45%;
-    height: 8rem;
-    padding: 1.5rem 2rem;
+    background-color:$color-light-2;
+    padding: 2rem 4rem;
+    width: 40%;
     border-radius: 3px;
-    transition: all 1s;
-    overflow: hidden;
+    transition: all .8s;
 
-    &__item{
-        list-style: none;
-        display: inline-block;
-      
-
-        &:not(:last-child){
-            margin-right: 1rem;
-        }
-
-    }
 
     &__link{
-        &,
-        &:link,
-        &:visited{
-            text-decoration: none;
-            font-size: 1.6rem;
-            color: $color-dark-1;
-            letter-spacing: 1px;
-        }
+        text-decoration: none;
+        color: $color-dark-1;
+        font-size: 1.6rem;
+        transition: all .4s;
 
+        &:not(:last-child){
+            margin-right: 1.5rem;
+        } 
+        
         &--hidden{
-            position: absolute;
-            display: block;
-            top:40%;
+            position: inherit;
+            left: 0;
+            display: none;
         }
     }
 
     &--hidden{
-        width: 5%;
-        height: 6rem;
-        padding: 0;
-
+       width: 5rem;
+       padding: 2rem .5rem;
     }
 }
 
 .btn{
-    margin-left:auto;
-    border: none;
+    margin-left: auto;
     height: 3rem;
-    cursor: pointer;
+    width: 4rem;
+    border: none;
     background-color: transparent;
-    transition: all .4s;
+    position: relative;
+    cursor: pointer;
+
 
     &-icon{
-        position: relative;
-        top:.8rem;
         height: 2px;
 
         &,
         &::before,
-        &::after{ 
-            width: 3rem;
-            background-color: $color-dark-1;
-            display: inline-block;
-        }
-
-        &::before,
         &::after{
             content: '';
-            position: absolute;
-            left:0;
-            height: 1.5px;
+            position: absolute;            
+            width: 3rem;
+            background-color: $color-dark-1;
+            left: .5rem;
         }
-
         &::before{
-            top:-.9rem;
-            height: 2px;
+            height: 1.5px;
+            top: -1rem;
+            left: 0;
         }
 
         &::after{
-            top:.9rem;
-        }
+            height: 1.5px;
+            top: 1rem;
+            left: 0;
+
+        }   
     }
 
     &--hidden{
-        margin: 0 auto;
+        width: 5rem;
     }
-}
 
-
-.hidden{
-    display: none;
-    //width: 0;
-    position: absolute;
-    left:0;
-    
 }

@@ -30,63 +30,51 @@ html {
 .nav {
   display: flex;
   align-items: center;
+  justify-content: space-around;
   position: absolute;
   background-color: #F9F2ED;
-  z-index: 2;
-  width: 45%;
-  height: 8rem;
-  padding: 1.5rem 2rem;
+  padding: 2rem 4rem;
+  width: 40%;
   border-radius: 3px;
-  transition: all 1s;
-  overflow: hidden; }
-  .nav__item {
-    list-style: none;
-    display: inline-block; }
-    .nav__item:not(:last-child) {
-      margin-right: 1rem; }
-  .nav__link, .nav__link:link, .nav__link:visited {
+  transition: all .8s; }
+  .nav__link {
     text-decoration: none;
-    font-size: 1.6rem;
     color: #343a40;
-    letter-spacing: 1px; }
-  .nav__link--hidden {
-    position: absolute;
-    display: block;
-    top: 40%; }
+    font-size: 1.6rem;
+    transition: all .4s; }
+    .nav__link:not(:last-child) {
+      margin-right: 1.5rem; }
+    .nav__link--hidden {
+      position: inherit;
+      left: 0;
+      display: none; }
   .nav--hidden {
-    width: 5%;
-    height: 6rem;
-    padding: 0; }
+    width: 5rem;
+    padding: 2rem .5rem; }
 
 .btn {
   margin-left: auto;
-  border: none;
   height: 3rem;
-  cursor: pointer;
+  width: 4rem;
+  border: none;
   background-color: transparent;
-  transition: all .4s; }
+  position: relative;
+  cursor: pointer; }
   .btn-icon {
-    position: relative;
-    top: .8rem;
     height: 2px; }
     .btn-icon, .btn-icon::before, .btn-icon::after {
-      width: 3rem;
-      background-color: #343a40;
-      display: inline-block; }
-    .btn-icon::before, .btn-icon::after {
       content: '';
       position: absolute;
-      left: 0;
-      height: 1.5px; }
+      width: 3rem;
+      background-color: #343a40;
+      left: .5rem; }
     .btn-icon::before {
-      top: -.9rem;
-      height: 2px; }
+      height: 1.5px;
+      top: -1rem;
+      left: 0; }
     .btn-icon::after {
-      top: .9rem; }
+      height: 1.5px;
+      top: 1rem;
+      left: 0; }
   .btn--hidden {
-    margin: 0 auto; }
-
-.hidden {
-  display: none;
-  position: absolute;
-  left: 0; }
+    width: 5rem; }
