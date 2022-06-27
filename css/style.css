@@ -25,9 +25,10 @@ body {
   align-items: center;
   width: 5rem;
   background-color: #F9F2ED;
-  padding: 3rem;
+  padding: 1rem;
   border-radius: 3px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4); }
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+  transition: all .6s; }
   .nav ul {
     display: flex;
     list-style: none;
@@ -44,7 +45,8 @@ body {
         font-size: 1.6rem;
         color: #343a40; }
   .nav--active {
-    width: 50rem; }
+    width: 50rem;
+    padding: 3rem; }
     .nav--active ul {
       margin-right: 12rem;
       width: 100%; }
@@ -53,21 +55,42 @@ body {
         display: hidden;
         margin-right: 2rem;
         transform: rotateY(360deg); }
+    .nav--active .btn {
+      width: 5rem;
+      padding: 2rem .5rem;
+      display: block; }
+      .nav--active .btn .btn-icon {
+        display: block;
+        width: 0; }
+        .nav--active .btn .btn-icon::before {
+          top: 0;
+          left: .5rem;
+          transform: rotate(-765deg); }
+        .nav--active .btn .btn-icon::after {
+          top: 0;
+          left: .5rem;
+          transform: rotate(765deg); }
   .nav .btn {
     width: 100%;
     height: 3rem;
     border: none;
     position: relative;
     background-color: transparent;
-    cursor: pointer; }
+    cursor: pointer;
+    transition: all .6s; }
     .nav .btn-icon, .nav .btn-icon::before, .nav .btn-icon::after {
       width: 3rem;
       height: 2px;
       position: absolute;
       background-color: #343a40;
       left: 0;
-      content: ''; }
+      content: '';
+      transform: rotate(0);
+      display: inline-block;
+      transition: transform 0.6s cubic-bezier(0.83, 0, 0.17, 1); }
     .nav .btn-icon::before {
-      top: -1rem; }
+      top: -1rem;
+      height: 1.9px; }
     .nav .btn-icon::after {
-      top: 1rem; }
+      top: 1rem;
+      height: 1.9px; }
