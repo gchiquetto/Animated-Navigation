@@ -11,70 +11,63 @@ html {
   font-size: 62.5%;
   box-sizing: border-box; }
 
+body {
+  background-image: linear-gradient(to bottom, #F7E2D6 0%, #F7E2D6 50%, #9DD6DF 50%, #9DD6DF 100%); }
+
 .main {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  position: relative;
   justify-content: center;
+  align-items: center;
   height: 100vh; }
-  .main__top {
-    height: 50%;
-    width: 100%;
-    background-color: #F7E2D6; }
-  .main__bottom {
-    height: 50%;
-    width: 100%;
-    background-color: #9DD6DF; }
 
 .nav {
   display: flex;
   align-items: center;
-  justify-content: space-around;
-  position: absolute;
+  width: 5rem;
   background-color: #F9F2ED;
-  padding: 2rem 4rem;
-  width: 40%;
+  padding: 3rem;
   border-radius: 3px;
-  transition: all .8s; }
-  .nav__link {
-    text-decoration: none;
-    color: #343a40;
-    font-size: 1.6rem;
-    transition: all .4s; }
-    .nav__link:not(:last-child) {
-      margin-right: 1.5rem; }
-    .nav__link--hidden {
-      position: inherit;
-      left: 0;
-      display: none; }
-  .nav--hidden {
-    width: 5rem;
-    padding: 2rem .5rem; }
-
-.btn {
-  margin-left: auto;
-  height: 3rem;
-  width: 4rem;
-  border: none;
-  background-color: transparent;
-  position: relative;
-  cursor: pointer; }
-  .btn-icon {
-    height: 2px; }
-    .btn-icon, .btn-icon::before, .btn-icon::after {
-      content: '';
-      position: absolute;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4); }
+  .nav ul {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    width: 0; }
+    .nav ul li {
+      opacity: 0;
+      transform: rotateY(0);
+      transition: all .6s;
+      width: auto; }
+      .nav ul li a {
+        text-decoration: none;
+        font-size: 1.6rem;
+        color: #343a40; }
+  .nav--active {
+    width: 50rem; }
+    .nav--active ul {
+      margin-right: 12rem;
+      width: 100%; }
+      .nav--active ul li {
+        opacity: 1;
+        display: hidden;
+        margin-right: 2rem;
+        transform: rotateY(360deg); }
+  .nav .btn {
+    width: 100%;
+    height: 3rem;
+    border: none;
+    position: relative;
+    background-color: transparent;
+    cursor: pointer; }
+    .nav .btn-icon, .nav .btn-icon::before, .nav .btn-icon::after {
       width: 3rem;
+      height: 2px;
+      position: absolute;
       background-color: #343a40;
-      left: .5rem; }
-    .btn-icon::before {
-      height: 1.5px;
-      top: -1rem;
-      left: 0; }
-    .btn-icon::after {
-      height: 1.5px;
-      top: 1rem;
-      left: 0; }
-  .btn--hidden {
-    width: 5rem; }
+      left: 0;
+      content: ''; }
+    .nav .btn-icon::before {
+      top: -1rem; }
+    .nav .btn-icon::after {
+      top: 1rem; }
